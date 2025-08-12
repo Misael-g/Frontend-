@@ -12,7 +12,7 @@ const TareasEmpleado = ({ tareas: tareasProp }) => {
     try {
       // ✅ Cambié "tarea" por "tareas" para que coincida con app.use('/api/tareas')
       const res = await fetchDataBackend(
-        `http://localhost:8080/api/tareas/${tareaId}/completar`,
+        `https://backend-izdm.onrender.com/api/tareas/${tareaId}/completar`,
         { texto: "Tarea completada desde el sistema" },
         "POST"
       );
@@ -39,7 +39,7 @@ const TareasEmpleado = ({ tareas: tareasProp }) => {
   const cargarMisTareas = async () => {
     try {
       const res = await fetchDataBackend(
-        `http://localhost:8080/api/tareas/mis-tareas`,
+        `https://backend-izdm.onrender.com/api/tareas/mis-tareas`,
         null,
         "GET"
       );
@@ -227,5 +227,6 @@ const TareasEmpleado = ({ tareas: tareasProp }) => {
 TareasEmpleado.propTypes = {
   tareas: PropTypes.array.isRequired,
 };
+
 
 export default TareasEmpleado;
