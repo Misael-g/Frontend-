@@ -13,7 +13,7 @@ const TextoImagen = () => {
     setImageUrl("")
     
     try {
-      const res = await fetch(`http://localhost:8080/api/auth/texto-imagen`, {
+      const res = await fetch(`https://backend-izdm.onrender.com/api/auth/texto-imagen`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -188,5 +188,6 @@ const TextoImagen = () => {
     </div>
   )
 }
+
 
 export default TextoImagen
