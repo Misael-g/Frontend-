@@ -72,7 +72,7 @@ const BienvenidaArea = () => {
         try {
             console.log('📋 Fetching mis tareas...')
             const tareas = await fetchDataBackend(
-                'http://localhost:8080/api/tareas/mis-tareas',
+                'https://backend-izdm.onrender.com/api/tareas/mis-tareas',
                 null,
                 'GET'
             )
@@ -87,7 +87,7 @@ const BienvenidaArea = () => {
     const selectEmpresaForJefe = async () => {
         try {
             const data = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${id}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${id}`,
                 null,
                 'POST'
             )
@@ -108,7 +108,7 @@ const BienvenidaArea = () => {
     const loadEmpresaData = async () => {
         try {
             const empresaInfo = await fetchDataBackend(
-                'http://localhost:8080/api/empresa/mi-empresa',
+                'https://backend-izdm.onrender.com/api/empresa/mi-empresa',
                 null,
                 'GET'
             )
@@ -124,7 +124,7 @@ const BienvenidaArea = () => {
         setLoading(true)
         try {
             const data = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${id}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${id}`,
                 null,
                 'POST'
             )
@@ -134,7 +134,7 @@ const BienvenidaArea = () => {
             }
             
             const res = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/empleados`,
+                `https://backend-izdm.onrender.com/api/empresa/empleados`,
                 null,
                 'GET'
             )
@@ -160,7 +160,7 @@ const BienvenidaArea = () => {
         setExpulsando(empleadoId)
         try {
             const data = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${id}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${id}`,
                 null,
                 'POST'
             )
@@ -170,7 +170,7 @@ const BienvenidaArea = () => {
             }
             
             const res = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/expulsar/${empleadoId}`,
+                `https://backend-izdm.onrender.com/api/empresa/expulsar/${empleadoId}`,
                 null,
                 'POST'
             )
@@ -196,7 +196,7 @@ const BienvenidaArea = () => {
 
         try {
             const resSeleccion = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/seleccionar/" + id,
+                "https://backend-izdm.onrender.com/api/empresa/seleccionar/" + id,
                 null,
                 "POST"
             )
@@ -206,7 +206,7 @@ const BienvenidaArea = () => {
             }
             
             const res = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/generar-invitacion",
+                "https://backend-izdm.onrender.com/api/empresa/generar-invitacion",
                 null,
                 "PUT"
             )
@@ -364,5 +364,6 @@ const BienvenidaArea = () => {
         </div>
     )
 }
+
 
 export default BienvenidaArea
