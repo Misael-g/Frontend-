@@ -109,7 +109,7 @@ const MisAreas = () => {
             
             try {
                 const empresasData = await fetchDataBackend(
-                    'http://localhost:8080/api/empresa/mis-empresas', 
+                    'https://backend-izdm.onrender.com/api/empresa/mis-empresas', 
                     null, 
                     'GET'
                 )
@@ -186,7 +186,7 @@ const MisAreas = () => {
     const handleSelectJefe = async (id) => {
         try {
             const res = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/seleccionar/" + id,
+                "https://backend-izdm.onrender.com/api/empresa/seleccionar/" + id,
                 null,
                 "POST"
             )
@@ -213,7 +213,7 @@ const MisAreas = () => {
         try {
             // Primero seleccionar la empresa
             const resSeleccion = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/seleccionar/" + id,
+                "https://backend-izdm.onrender.com/api/empresa/seleccionar/" + id,
                 null,
                 "POST"
             )
@@ -224,7 +224,7 @@ const MisAreas = () => {
 
             // Luego generar el código
             const res = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/generar-invitacion",
+                "https://backend-izdm.onrender.com/api/empresa/generar-invitacion",
                 null,
                 "PUT"
             )
@@ -366,5 +366,6 @@ const MisAreas = () => {
         </div>
     )
 }
+
 
 export default MisAreas
