@@ -77,14 +77,14 @@ const FormTarea = ({ empleados, empresaId, onTareaCreada }) => {
         try {
             // Selecciona la empresa para obtener el token correcto
             await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${empresaId}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${empresaId}`,
                 null,
                 "POST"
             );
             
             // Envía la tarea al backend (Corregida la URL)
             const res = await fetchDataBackend(
-                "http://localhost:8080/api/tareas/crear",
+                "https://backend-izdm.onrender.com/api/tareas/crear",
                 {
                     ...form,
                     recompensaXP: Number(form.recompensaXP),
@@ -332,5 +332,6 @@ FormTarea.propTypes = {
     empresaId: PropTypes.string.isRequired,
     onTareaCreada: PropTypes.func
 };
+
 
 export default FormTarea;
