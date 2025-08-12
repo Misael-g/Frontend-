@@ -64,7 +64,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
         setIsLoading(prev => ({ ...prev, [id]: true }))
         try {
             const data = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/seleccionar/" + id,
+                "https://backend-izdm.onrender.com/api/empresa/seleccionar/" + id,
                 null,
                 "POST"
             )
@@ -73,7 +73,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
                 storeAuth.getState().setToken(data.token)
             }
             const res = await fetchDataBackend(
-                "http://localhost:8080/api/empresa/generar-invitacion",
+                "https://backend-izdm.onrender.com/api/empresa/generar-invitacion",
                 null,
                 "PUT"
             )
@@ -127,7 +127,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
         }
         try {
             const data = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${empresaAEditar._id}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${empresaAEditar._id}`,
                 null,
                 'POST'
             )
@@ -136,7 +136,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
                 storeAuth.getState().setToken(data.token)
             }
             const result = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/actualizar`,
+                `https://backend-izdm.onrender.com/api/empresa/actualizar`,
                 updatePayload,
                 'PUT'
             )
@@ -171,7 +171,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
         if (!empresaAEliminar) return
         try {
             const data = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/seleccionar/${empresaAEliminar._id}`,
+                `https://backend-izdm.onrender.com/api/empresa/seleccionar/${empresaAEliminar._id}`,
                 null,
                 'POST'
             )
@@ -180,7 +180,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
                 storeAuth.getState().setToken(data.token)
             }
             const res = await fetchDataBackend(
-                `http://localhost:8080/api/empresa/eliminar/${empresaAEliminar._id}`,
+                `https://backend-izdm.onrender.com/api/empresa/eliminar/${empresaAEliminar._id}`,
                 null,
                 'DELETE'
             )
@@ -222,7 +222,7 @@ const CardAreas = ({ areas, onSelect, onChange, isEmployee = false }) => {
         if (!empresaASalir) return
         try {
             const res = await fetchDataBackend(
-                `http://localhost:8080/api/auth/salir-empresa/${empresaASalir._id}`,
+                `https://backend-izdm.onrender.com/api/auth/salir-empresa/${empresaASalir._id}`,
                 null,
                 'DELETE'
             )
@@ -629,5 +629,6 @@ CardAreas.propTypes = {
     onChange: PropTypes.func,
     isEmployee: PropTypes.bool
 }
+
 
 export default CardAreas
