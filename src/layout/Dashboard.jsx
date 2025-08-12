@@ -84,7 +84,7 @@
             setIsLoading(true)
             try {
                 const data = await fetchDataBackend(
-                    'http://localhost:8080/api/empresa/crear',
+                    'https://backend-izdm.onrender.com/api/empresa/crear',
                     {
                         nombre: workspaceName,
                         descripcion: workspaceDesc,
@@ -119,7 +119,7 @@
             setIsLoading(true)
             try {
                 const data = await fetchDataBackend(
-                    'http://localhost:8080/api/empresa/unirse',
+                    'https://backend-izdm.onrender.com/api/empresa/unirse',
                     { token: codigoInvitacion },
                     'POST'
                 )
@@ -559,5 +559,6 @@
             </div>
         )
     }
+
 
     export default Dashboard
